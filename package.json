@@ -1,6 +1,6 @@
 {
   "name": "rescript-use-yarn-workspaces",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Helper to use Yarn Workspaces with CRA",
   "main": "index.js",
   "repository": "https://github.com/princed/rescript-use-yarn-workspaces",
