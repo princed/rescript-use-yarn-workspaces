@@ -11,6 +11,15 @@ const include = Object.values(packages).map(p => path.join(root, p.location))
 const exclude = /node_modules/
 
 module.exports = config => {
+  const nodeModules = 'node_modules'
+  const packageModules = config.resolve.modules.filter(p => p !== nodeModules)
+  // Favor the original package's node_modules first to avoid package duplication
+  // See https://medium.com/rewire-to/webpack-module-resolution-within-a-monorepo-or-how-i-stopped-bundling-two-versions-of-react-7c1d8c31d5a0
+  config.resolve.modules = packageModules.concat(
+    path.join(root, nodeModules),
+    nodeModules,
+  )
+
   const babelLoaderPaths = getPaths(
     // Only use babel-loader instance with explicit includes
     p => p && p.loader && p.loader.includes('babel-loader') && !!p.include,
