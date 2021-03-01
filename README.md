@@ -1,3 +1,5 @@
+__DEPRECATED, use [DISABLE_ESLINT_PLUGIN](https://github.com/facebook/create-react-app/pull/10170)__
+
 # [rescript](https://github.com/harrysolovay/rescripts)-use-yarn-workspaces
 
 This plugin will allow using CRA inside a Yarn Workspace configuration,
